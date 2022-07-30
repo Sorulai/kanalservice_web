@@ -11,23 +11,21 @@ services:
       - db
 
   db:
-    image: postgres:12
+    image: postgres:13.0-alpine
     container_name: db
-    environment:
-      POSTGRES_DB: kanalservice-web,
-      POSTGRES_USER: postgres,
-      POSTGRES_PASSWORD: app123
+    env_file:
+      - .env.db
     volumes:
       - kanalservice-db:/var/lib/postgresql/data
 
-#
-#  ngnix:
-#    build: ./ngnix
-#    restart: on-failure
-#    ports:
-#      - 80:80
-#    depends_on:
-#      - back
-#
+
+  ngnix:
+    build: ./ngnix
+    restart: on-failure
+    ports:
+      - 1337:80
+    depends_on:
+      - back
+
 volumes:
   kanalservice-db:
