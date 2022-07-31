@@ -4,11 +4,13 @@ services:
   back:
     build: ./kanalservice_back
     container_name: back
-    restart: always
+    restart: on-failure
+    entrypoint: ["/usr/src/app/entrypoint.sh"]
     ports:
       - 8080:8080
     depends_on:
       - db
+      - redis
 
   db:
     image: postgres:13.0-alpine
@@ -27,5 +29,38 @@ services:
     depends_on:
       - back
 
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - 6380:6379
+
+  celery:
+    build: ./kanalservice_back
+    restart: always
+    entrypoint: ["/usr/src/app/entrypoint_celery.sh"]
+    volumes:
+      - celery_volume:/usr/src/app/
+    env_file:
+      - ./kanalservice_back/.env
+    depends_on:
+      - redis
+      - back
+
+  celery-beat:
+    build: ./kanalservice_back
+    restart: always
+    entrypoint: ["/usr/src/app/entrypoint_celery_beat.sh"]
+    volumes:
+      - celery_volume_beat:/usr/src/app/
+    env_file:
+      - ./kanalservice_back/.env
+    depends_on:
+      - redis
+      - back
+      - celery
+
 volumes:
   kanalservice-db:
+  celery_volume:
+  celery_volume_beat:
