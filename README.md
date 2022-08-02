@@ -1,5 +1,21 @@
 # kanalservice_web
 
+## Запуск с помощью докера
+1. Для запуска скрипта через докер, необходимо находится в директории __*kanalservice_web*__ 
+
+2. Нужно дать скриптам права доступа для испольнения с помощью комманд
+``` 
+POSTGRES_USER=your_user
+POSTGRES_PASSWORD=your_password
+POSTGRES_DB=kanalservice-web
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+
+REDIS_HOST=localhost
+REDIS_PORT=6379
+...
+```
+
 ## Запуск без докера
 
 ### Дополнительные утилиты
