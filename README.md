@@ -6,6 +6,8 @@
 - С помощью Celery создана переодическая задача, котора раз в сутки получает корректный курс доллара к рублю
 - Фронт создан с помощью React
 
+[Google Sheet](https://docs.google.com/spreadsheets/d/1YJNeMjZHmX1rPmeLk2A2JY5Axq_OLeRw8zMHRp5DaNI/edit#gid=0)
+
 ![Вид](https://skr.sh/i/020822/lqnla3qS.jpg?download=1&name=%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2003-08-2022%2001:28:00.jpg)
 
 ***
