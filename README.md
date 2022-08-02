@@ -22,7 +22,10 @@ chmod +x kanalservice_front/entrypoint-front.sh
 ```
 3. Запустить Докер
 
-``` sudo docker-compose up --build``` 
+``` sudo docker-compose up --build```
+
+4. Переходим в приложение по ссылке 
+[http://localhost:3000/](http://localhost:3000/)
 
 ***
 
