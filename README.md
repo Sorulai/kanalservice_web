@@ -70,5 +70,10 @@ REDIS_PORT=6379
 
 12.Переходим в файл *App.js* , который находится в  __*kanalservice_front/src*__, в 12 строке нужно поменять порт с *1337* на порт django сервера(по умолчанию *8000*)
 
-13.Находясь в директории __*kanalservice_front*__ запускаем react сервер
+13.Находясь в директории __*kanalservice_front*__ устанавливаем React
+- `npm install react-script`
+- 
+14.После установки запускаем react сервер
 - `npm start`
+
+Переходим в приложение по ссылке [http://localhost:3000/]([lifehacker.ru](http://localhost:3000/))
