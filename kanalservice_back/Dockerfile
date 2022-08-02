@@ -16,5 +16,3 @@ COPY ./entrypoint_celery_beat.sh /usr/src/app/
 RUN chmod +x /usr/src/app/entrypoint_celery_beat.sh
 
 COPY . /usr/src/app/
-
-#ENTRYPOINT ["/usr/src/app/entrypoint.sh"]

@@ -11,6 +11,7 @@ JSON_PATH = 'mainapp/json'
 
 @app.task
 def get_currency_beat_celery():
+    """Задача для Celery-раз в сутки получает актульные данные о валюте и записывает их в файл"""
     url = 'http://www.cbr.ru/scripts/XML_daily.asp'
     response = requests.get(url).content
     tree = ET.fromstring(response)

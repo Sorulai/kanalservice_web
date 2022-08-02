@@ -11,6 +11,6 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'get_valute_every_day': {
         'task': 'mainapp.tasks.get_currency_beat_celery',
-        'schedule': crontab(minute='*/2'),
+        'schedule': crontab(minute="*/5",),
     }
 }

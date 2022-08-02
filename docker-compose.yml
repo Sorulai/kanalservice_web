@@ -4,7 +4,7 @@ services:
   back:
     build: ./kanalservice_back
     container_name: back
-    restart: on-failure
+    restart: always
     entrypoint: ["/usr/src/app/entrypoint.sh"]
     ports:
       - 8080:8080
@@ -59,6 +59,20 @@ services:
       - redis
       - back
       - celery
+
+  front:
+    build: ./kanalservice_front
+    restart: always
+    entrypoint: ["/usr/src/app/front/entrypoint-front.sh"]
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+      - redis
+      - celery
+      - celery-beat
+      - back
+
 
 volumes:
   kanalservice-db:

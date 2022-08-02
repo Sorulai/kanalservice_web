@@ -1,3 +1,3 @@
 #!/bin/sh
-sleep 25
+sleep 30
 celery -A kanalservice_back worker -l info
