@@ -52,7 +52,7 @@ REDIS_PORT=6379
 4. Далее устанавливаем все зависимости из *requirements.txt*
 - `pip install -r kanalservice_back/requirements.txt `
 
-5. Создаем БД в PostgreSQL(проверьте что бы название в .env файле совпадало с названием вашей БД)
+5. Создаем БД *kanalservice-web* в PostgreSQL(проверьте что бы название в .env файле совпадало с названием вашей БД)
 
 6.Переходим в директорию __*kanalservice_back*__
 
