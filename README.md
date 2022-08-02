@@ -76,4 +76,5 @@ REDIS_PORT=6379
 14.После установки запускаем react сервер
 - `npm start`
 
-Переходим в приложение по ссылке [http://localhost:3000/]([lifehacker.ru](http://localhost:3000/))
+Переходим в приложение по ссылке 
+[http://localhost:3000/](http://localhost:3000/)
