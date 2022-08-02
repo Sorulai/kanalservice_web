@@ -4,10 +4,13 @@ from mainapp.models import Order
 
 def get_valute():
     """Возвращает валюту из файла"""
-    with open('mainapp/json/valute.txt', 'r') as f:
-        valute = f.read()
+    try:
+        with open('mainapp/json/valute.txt', 'r') as f:
+            valute = f.read()
 
-    return float(valute.replace(',', '.'))
+        return float(valute.replace(',', '.'))
+    except Exception:
+        return None
 
 
 def create_db_data(values):
