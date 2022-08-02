@@ -5,16 +5,16 @@
 
 2. Нужно дать скриптам права доступа для испольнения с помощью комманд
 ``` 
-POSTGRES_USER=your_user
-POSTGRES_PASSWORD=your_password
-POSTGRES_DB=kanalservice-web
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-
-REDIS_HOST=localhost
-REDIS_PORT=6379
-...
+chmod +x kanalservice_back/entrypoint.sh
+chmod +x kanalservice_back/entrypoint_celery.sh
+chmod +x kanalservice_back/entrypoint_celery_beat.sh 
+chmod +x kanalservice_front/entrypoint-front.sh 
 ```
+3. Запустить Докер
+
+``` sudo docker-compose up --build``` 
+
+***
 
 ## Запуск без докера
 
